@@ -229,8 +229,8 @@ class _HomePageState extends State<HomePage> {
                       width: 163,
                       height: double.infinity,
                       child: Stack(
-                        children: const [
-                          Positioned(
+                        children: [
+                          const Positioned(
                             left: 30,
                             top: 0,
                             child: Align(
@@ -249,17 +249,30 @@ class _HomePageState extends State<HomePage> {
                             ),
                           ),
                           Positioned(
-                              left: 0,
-                              top: 12,
-                              child: Align(
-                                child: SizedBox(
-                                  width: 36.18,
-                                  height: 37,
+                            left: 0,
+                            top: 12,
+                            child: Align(
+                              child: SizedBox(
+                                width: 36.18,
+                                height: 37,
+                                child: Image.asset(
+                                  "assets/images/Rectangle.png",
+                                  fit: BoxFit.cover,
                                 ),
-                              ))
+                              ),
+                            ),
+                          ),
                         ],
                       ),
                     ),
+                    SizedBox(
+                        width: 145,
+                        height: 132,
+                        child: Image.asset(
+                          "assets/images/Emoji1.png",
+                          width: 145,
+                          height: 132,
+                        ))
                   ],
                 ),
               ),
@@ -270,91 +283,3 @@ class _HomePageState extends State<HomePage> {
     );
   }
 }
-
-// Container(
-//   // quickquizDQB (175:2266)
-//   margin:  EdgeInsets.fromLTRB(1*fem, 0*fem, 1*fem, 20*fem),
-//   padding:  EdgeInsets.fromLTRB(19*fem, 0*fem, 0*fem, 0*fem),
-//   width:  double.infinity,
-//   height:  117*fem,
-//   decoration:  BoxDecoration (
-//     borderRadius:  BorderRadius.circular(10*fem),
-//     gradient:  LinearGradient (
-//       begin:  Alignment(-0.603, -1.444),
-//       end:  Alignment(0.91, 1.479),
-//       colors:  <Color>[Color(0xff41d9b5), Color(0xff3e3ef1)],
-//       stops:  <double>[0, 1],
-//     ),
-//   ),
-//   child:
-// Row(
-//   crossAxisAlignment:  CrossAxisAlignment.center,
-//   children:  [
-// Container(
-//   // autogroupeh2o5SP (DPBwDPR6iFbbAkH95YEh2o)
-//   margin:  EdgeInsets.fromLTRB(0*fem, 14*fem, 22*fem, 33*fem),
-//   width:  163*fem,
-//   height:  double.infinity,
-//   child:
-// Stack(
-//   children:  [
-// Positioned(
-//   // comeonletsplaycSK (328:2532)
-//   left:  30*fem,
-//   top:  0*fem,
-//   child:
-// Align(
-//   child:
-// SizedBox(
-//   width:  133*fem,
-//   height:  70*fem,
-//   child:
-// Text(
-//   'COME ON,\nLET’S PLAY',
-//   textAlign:  TextAlign.center,
-//   style:  SafeGoogleFont (
-//     'Quicksand',
-//     fontSize:  28*ffem,
-//     fontWeight:  FontWeight.w700,
-//     height:  1.25*ffem/fem,
-//     letterSpacing:  0.1120000017*fem,
-//   ),
-// ),
-// ),
-// ),
-// ),
-// Positioned(
-//   // rectanglehTm (373:4594)
-//   left:  0*fem,
-//   top:  12*fem,
-//   child:
-// Align(
-//   child:
-// SizedBox(
-//   width:  36.18*fem,
-//   height:  37*fem,
-//   child:
-// Image.network(
-//   [Image url]
-//   fit:  BoxFit.cover,
-// ),
-// ),
-// ),
-// ),
-//   ],
-// ),
-// ),
-// Container(
-//   // autogroupdico2kw (DPBwWJ6bKQVAcZAsUzdiCo)
-//   width:  145*fem,
-//   height:  132*fem,
-//   child:
-// Image.network(
-//   [Image url]
-//   width:  145*fem,
-//   height:  132*fem,
-// ),
-// ),
-//   ],
-// ),
-// ),
