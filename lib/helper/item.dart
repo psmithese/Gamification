@@ -8,7 +8,7 @@ final List<String> imgList = [
 
 final List<Widget> imageSliders = imgList
     .map((item) => Container(
-          margin: const EdgeInsets.only(left: 5, right: 5),
+          //margin: const EdgeInsets.only(left: 5, right: 5),
           child: ClipRRect(
               //borderRadius: const BorderRadius.all(Radius.circular(5.0)),
               child: Stack(
@@ -16,6 +16,7 @@ final List<Widget> imageSliders = imgList
               Image.asset(
                 item,
                 fit: BoxFit.cover,
+                height: 1000,
                 width: 1000.0,
               ),
             ],
