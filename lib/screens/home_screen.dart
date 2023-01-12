@@ -5,7 +5,12 @@ import 'package:gamification/helper/app_info_list.dart';
 import 'package:gamification/helper/item.dart';
 import 'package:gamification/helper/nav_function.dart';
 import 'package:gamification/screens/beginner_screen.dart';
+import 'package:gamification/screens/dashboard.dart';
+import 'package:gamification/screens/feedback.dart';
 import 'package:gamification/screens/guide_screen.dart';
+import 'package:gamification/screens/leaderboard.dart';
+import 'package:gamification/screens/settings.dart';
+import 'package:gamification/screens/signin_screen.dart';
 import 'package:gamification/screens/videos_screen.dart';
 import 'package:gamification/widget/drawer_widget.dart';
 import 'package:gamification/widget/text_widget.dart';
@@ -53,23 +58,45 @@ class _HomePageState extends State<HomePage> {
         child: ListView(
           children: [
             const SizedBox(height: 40),
-            drawer(
-              text: 'My Dashboard',
-              icon: (Icons.person_outline_rounded),
+            GestureDetector(
+              onTap: () {
+                goTo(context, const DashboardScreen());
+              },
+              child: drawer(
+                text: 'My Dashboard',
+                icon: (Icons.person_outline_rounded),
+              ),
             ),
             drawer(
                 text: 'Course curriculum', icon: Icons.calendar_month_outlined),
-            drawer(
-              text: 'Leadearboards',
-              icon: Fontelico.crown,
+            GestureDetector(
+              onTap: () {
+                goTo(context, const LeaderBoard());
+              },
+              child: drawer(
+                text: 'Leadearboards',
+                icon: Fontelico.crown,
+              ),
             ),
             drawer(text: 'My Grades', icon: Icons.grade_outlined),
-            drawer(text: 'Settings', icon: Icons.settings_outlined),
-            drawer(text: 'Feedback', icon: Icons.email_outlined),
+            GestureDetector(
+                onTap: () {
+                  goTo(context, const Settings());
+                },
+                child: drawer(text: 'Settings', icon: Icons.settings_outlined)),
+            GestureDetector(
+                onTap: () {
+                  goTo(context, const FeedBack());
+                },
+                child: drawer(text: 'Feedback', icon: Icons.email_outlined)),
             const SizedBox(
               height: 250,
             ),
-            drawer(text: 'Log Out', icon: Icons.logout_outlined)
+            GestureDetector(
+                onTap: () {
+                  goTo(context, const SignInScreen());
+                },
+                child: drawer(text: 'Log Out', icon: Icons.logout_outlined))
           ],
         ),
       ),

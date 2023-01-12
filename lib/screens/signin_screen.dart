@@ -2,10 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:gamification/helper/nav_function.dart';
 import 'package:gamification/screens/home_screen.dart';
 import 'package:gamification/screens/signup_screen.dart';
-import 'package:gamification/widget/facebook_widget.dart';
-import 'package:gamification/widget/linkdien_widget.dart';
 import 'package:gamification/widget/text_widget.dart';
-import 'package:gamification/widget/twitter_widget.dart';
+import 'package:gap/gap.dart';
 
 import '../widget/textformfield_widget.dart';
 
@@ -23,6 +21,7 @@ class _SignInScreenState extends State<SignInScreen> {
       body: SafeArea(
         child: SingleChildScrollView(
           child: Container(
+            color: const Color(0xffF1F1F1),
             padding: const EdgeInsets.fromLTRB(0, 44, 0, 0),
             width: double.infinity,
             child: Column(
@@ -65,10 +64,13 @@ class _SignInScreenState extends State<SignInScreen> {
                       CustomTextFormField(
                           initialValue: "",
                           decoration: InputDecoration(
+                              fillColor: Colors.white,
+                              filled: true,
                               hintStyle:
                                   const TextStyle(color: Color(0xff565656)),
                               hintText: "Your Password ?",
                               border: OutlineInputBorder(
+                                  borderSide: BorderSide.none,
                                   borderRadius: BorderRadius.circular(10))),
                           validator: (value) {
                             if (value!.isEmpty) {
@@ -138,40 +140,16 @@ class _SignInScreenState extends State<SignInScreen> {
                           ],
                         ),
                       ),
-                      const SizedBox(
-                        height: 36,
-                      ),
-                      const Center(
-                        child: CustomText(
-                            text: "Or",
-                            style: TextStyle(color: Color(0xff5C58FF)),
-                            align: TextAlign.center),
-                      ),
-                      const SizedBox(
-                        height: 31.12,
-                      ),
-                      Container(
-                        margin: const EdgeInsets.fromLTRB(128, 0, 121, 47),
-                        padding: const EdgeInsets.fromLTRB(0, 1.12, 0, 5.24),
-                        width: double.infinity,
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: const [
-                            Facebook(),
-                            LinkedIn(),
-                            Twitter(),
-                          ],
-                        ),
-                      ),
                     ],
                   ),
                 ),
+                const Gap(199),
                 Container(
                   margin: const EdgeInsets.fromLTRB(0, 0, 239.99, 0),
                   width: 133.10,
                   height: 85,
                   child: Image.asset(
-                    "assets/images/Vectord.png",
+                    "assets/images/Vectorvector.png",
                     width: 133.10,
                     height: 90,
                   ),

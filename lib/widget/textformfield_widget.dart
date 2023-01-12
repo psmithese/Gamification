@@ -30,10 +30,14 @@ class TextForm extends StatelessWidget {
     return CustomTextFormField(
         initialValue: "",
         decoration: InputDecoration(
-            hintStyle: const TextStyle(color: Color(0xff565656)),
-            hintText: "you@gmail.com",
-            border:
-                OutlineInputBorder(borderRadius: BorderRadius.circular(10))),
+          fillColor: Colors.white,
+          filled: true,
+          hintStyle: const TextStyle(color: Color(0xff565656)),
+          hintText: "you@gmail.com",
+          border: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(10),
+              borderSide: BorderSide.none),
+        ),
         validator: (value) {
           if (value!.isEmpty) {
             return "Please enter a name";
