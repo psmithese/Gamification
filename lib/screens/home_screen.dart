@@ -1,12 +1,15 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:fluttericon/fontelico_icons.dart';
 import 'package:gamification/helper/app_info_list.dart';
 import 'package:gamification/helper/item.dart';
 import 'package:gamification/helper/nav_function.dart';
 import 'package:gamification/screens/beginner_screen.dart';
 import 'package:gamification/screens/guide_screen.dart';
 import 'package:gamification/screens/videos_screen.dart';
+import 'package:gamification/widget/drawer_widget.dart';
 import 'package:gamification/widget/text_widget.dart';
+import 'package:gap/gap.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -16,26 +19,80 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  final GlobalKey _scafoldKey = GlobalKey();
   int _current = 0;
   final CarouselController _controller = CarouselController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      key: _scafoldKey,
+      appBar: AppBar(
+          backgroundColor: Colors.transparent,
+          elevation: 0,
+          actions: [
+            Padding(
+              padding: const EdgeInsets.only(left: 30.0),
+              child: Image.asset('assets/images/Bell.png'),
+            )
+          ],
+          leading: Builder(builder: (BuildContext context) {
+            return IconButton(
+                onPressed: () {
+                  Scaffold.of(context).openDrawer();
+                },
+                icon: Image.asset(
+                  'assets/images/menu.png',
+                  //scale: 30,
+                ));
+          })),
+      drawer: Container(
+        width: MediaQuery.of(context).size.width / 1.8,
+        decoration: const BoxDecoration(
+            color: Color(0xff5C58FF),
+            borderRadius: BorderRadius.only(bottomRight: Radius.circular(200))),
+        child: ListView(
+          children: [
+            const SizedBox(height: 40),
+            drawer(
+              text: 'My Dashboard',
+              icon: (Icons.person_outline_rounded),
+            ),
+            drawer(
+                text: 'Course curriculum', icon: Icons.calendar_month_outlined),
+            drawer(
+              text: 'Leadearboards',
+              icon: Fontelico.crown,
+            ),
+            drawer(text: 'My Grades', icon: Icons.grade_outlined),
+            drawer(text: 'Settings', icon: Icons.settings_outlined),
+            drawer(text: 'Feedback', icon: Icons.email_outlined),
+            const SizedBox(
+              height: 250,
+            ),
+            drawer(text: 'Log Out', icon: Icons.logout_outlined)
+          ],
+        ),
+      ),
       body: SafeArea(
         child: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.end,
             children: [
-              Padding(
-                padding: const EdgeInsets.all(20.0),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Image.asset("assets/images/menu.png"),
-                    Image.asset("assets/images/Bell.png")
-                  ],
-                ),
-              ),
+              // Padding(
+              //   padding: const EdgeInsets.all(20.0),
+              //   child: Row(
+              //     mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              //     children: [
+              //       GestureDetector(
+              //           onTap: () {
+              //             //  _scafoldKey.currentState.op;
+              //           },
+              //           child: Image.asset("assets/images/menu.png")),
+              //       Image.asset("assets/images/Bell.png")
+              //     ],
+              //   ),
+              // ),
+              const Gap(40),
               Container(
                 margin: const EdgeInsets.only(left: 20, right: 20),
                 height: 46,
@@ -58,7 +115,7 @@ class _HomePageState extends State<HomePage> {
                           borderRadius: BorderRadius.all(
                             Radius.circular(13.0),
                           ),
-                          borderSide: BorderSide(width: 1.8),
+                          borderSide: BorderSide.none,
                         ),
                         enabledBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(13.0),
@@ -137,11 +194,11 @@ class _HomePageState extends State<HomePage> {
                       child: Image.asset("assets/images/begin.png"),
                     ),
                     const SizedBox(
-                      width: 20,
+                      width: 10,
                     ),
                     Image.asset("assets/images/inter.png"),
                     const SizedBox(
-                      width: 20,
+                      width: 10,
                     ),
                     Image.asset("assets/images/advance.png")
                   ],
