@@ -8,7 +8,7 @@ final List<String> imgList = [
 
 final List<Widget> imageSliders = imgList
     .map((item) => ClipRRect(
-            //borderRadius: const BorderRadius.all(Radius.circular(5.0)),
+            borderRadius: const BorderRadius.all(Radius.circular(5.0)),
             child: Stack(
           children: [
             Image.asset(

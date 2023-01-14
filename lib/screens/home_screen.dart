@@ -3,8 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:gamification/helper/app_info_list.dart';
 import 'package:gamification/helper/item.dart';
 import 'package:gamification/helper/nav_function.dart';
+import 'package:gamification/screens/advance_screen.dart';
 import 'package:gamification/screens/beginner_screen.dart';
 import 'package:gamification/screens/guide_screen.dart';
+import 'package:gamification/screens/intermediate_screen.dart';
 import 'package:gamification/screens/videos_screen.dart';
 import 'package:gamification/widget/text_widget.dart';
 
@@ -139,11 +141,15 @@ class _HomePageState extends State<HomePage> {
                     const SizedBox(
                       width: 20,
                     ),
-                    Image.asset("assets/images/inter.png"),
+                    InkWell(
+                        onTap: () => goTo(context, const IntermediateScreen()),
+                        child: Image.asset("assets/images/inter.png")),
                     const SizedBox(
                       width: 20,
                     ),
-                    Image.asset("assets/images/advance.png")
+                    InkWell(
+                        onTap: () => goTo(context, const AdvancedScreen()),
+                        child: Image.asset("assets/images/advance.png"))
                   ],
                 ),
               ),
@@ -175,7 +181,7 @@ class _HomePageState extends State<HomePage> {
                 },
                 child: SingleChildScrollView(
                   scrollDirection: Axis.horizontal,
-                  padding: const EdgeInsets.only(left: 20),
+                  padding: const EdgeInsets.only(left: 5),
                   child: Row(
                       children: videoList
                           .map(
@@ -206,7 +212,7 @@ class _HomePageState extends State<HomePage> {
                 ),
               ),
               Container(
-                margin: const EdgeInsets.fromLTRB(1, 0, 1, 20),
+                margin: const EdgeInsets.fromLTRB(20, 0, 20, 20),
                 width: double.infinity,
                 height: 117,
                 decoration: BoxDecoration(
@@ -225,7 +231,7 @@ class _HomePageState extends State<HomePage> {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     Container(
-                      margin: const EdgeInsets.fromLTRB(0, 14, 22, 33),
+                      margin: const EdgeInsets.fromLTRB(0, 14, 80, 33),
                       width: 163,
                       height: double.infinity,
                       child: Stack(
@@ -255,9 +261,13 @@ class _HomePageState extends State<HomePage> {
                               child: SizedBox(
                                 width: 36.18,
                                 height: 37,
-                                child: Image.asset(
-                                  "assets/images/Rectangle.png",
-                                  fit: BoxFit.cover,
+                                child: ClipRRect(
+                                  // borderRadius: const BorderRadius.all(
+                                  //     Radius.circular(15.0)),
+                                  child: Image.asset(
+                                    "assets/images/Rectangle.png",
+                                    fit: BoxFit.cover,
+                                  ),
                                 ),
                               ),
                             ),
@@ -265,14 +275,17 @@ class _HomePageState extends State<HomePage> {
                         ],
                       ),
                     ),
-                    SizedBox(
+                    Expanded(
+                      child: SizedBox(
                         width: 145,
                         height: 132,
                         child: Image.asset(
                           "assets/images/Emoji1.png",
                           width: 145,
                           height: 132,
-                        ))
+                        ),
+                      ),
+                    )
                   ],
                 ),
               ),

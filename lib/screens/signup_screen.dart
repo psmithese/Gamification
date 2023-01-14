@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:gamification/helper/nav_function.dart';
 import 'package:gamification/screens/home_screen.dart';
+import 'package:gamification/screens/signin_screen.dart';
 import 'package:gamification/widget/facebook_widget.dart';
 import 'package:gamification/widget/linkdien_widget.dart';
 import 'package:gamification/widget/text_widget.dart';
@@ -81,10 +82,13 @@ class _SignUpScreenState extends State<SignUpScreen> {
                         return const SignUpScreen();
                       })));
                     },
-                    child: const CustomText(
-                        text: "Sign in",
-                        style: TextStyle(color: Color(0xff5C58FF)),
-                        align: TextAlign.start),
+                    child: InkWell(
+                      onTap: () => goTo(context, const SignInScreen()),
+                      child: const CustomText(
+                          text: "Sign in",
+                          style: TextStyle(color: Color(0xff5C58FF)),
+                          align: TextAlign.start),
+                    ),
                   ),
                 ],
               ),
