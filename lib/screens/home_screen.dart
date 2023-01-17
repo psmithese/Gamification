@@ -9,6 +9,7 @@ import 'package:gamification/screens/dashboard.dart';
 import 'package:gamification/screens/feedback.dart';
 import 'package:gamification/screens/guide_screen.dart';
 import 'package:gamification/screens/leaderboard.dart';
+import 'package:gamification/screens/quiz_instructions.dart';
 import 'package:gamification/screens/settings.dart';
 import 'package:gamification/screens/signin_screen.dart';
 import 'package:gamification/screens/videos_screen.dart';
@@ -162,15 +163,6 @@ class _HomePageState extends State<HomePage> {
                     const SizedBox(
                       width: 9,
                     ),
-                    Container(
-                      height: 50,
-                      width: 50,
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(10),
-                          image: const DecorationImage(
-                              fit: BoxFit.fitHeight,
-                              image: AssetImage("assets/images/filter1.png"))),
-                    ),
                   ],
                 ),
               ),
@@ -184,6 +176,7 @@ class _HomePageState extends State<HomePage> {
                   autoPlay: true,
                   enlargeCenterPage: true,
                   aspectRatio: 3.0,
+                  viewportFraction: 0.95,
                   onPageChanged: ((index, reason) {
                     setState(
                       () {
@@ -212,50 +205,59 @@ class _HomePageState extends State<HomePage> {
                 }).toList(),
               ),
               Padding(
-                padding: const EdgeInsets.fromLTRB(19, 21, 18, 20),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    GestureDetector(
-                      onTap: (() => goTo(context, const BeginnerQuizScreen())),
-                      child: Image.asset("assets/images/begin.png"),
-                    ),
-                    const SizedBox(
-                      width: 10,
-                    ),
-                    Image.asset("assets/images/inter.png"),
-                    const SizedBox(
-                      width: 10,
-                    ),
-                    Image.asset("assets/images/advance.png")
-                  ],
+                padding: const EdgeInsets.fromLTRB(18, 21, 18, 20),
+                child: SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      GestureDetector(
+                        onTap: (() =>
+                            goTo(context, const BeginnerQuizScreen())),
+                        child: Image.asset("assets/images/begin.png"),
+                      ),
+                      const SizedBox(
+                        width: 8,
+                      ),
+                      Image.asset("assets/images/inter.png"),
+                      const SizedBox(
+                        width: 8,
+                      ),
+                      Image.asset("assets/images/advance.png")
+                    ],
+                  ),
                 ),
               ),
               Padding(
                 padding: const EdgeInsets.fromLTRB(30, 8, 30, 8),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: const [
-                    CustomText(
+                  children: [
+                    const CustomText(
                         text: "Beginners guide",
                         style: TextStyle(
                             color: Color.fromARGB(255, 89, 88, 88),
                             fontSize: 18,
                             fontWeight: FontWeight.w600),
                         align: TextAlign.end),
-                    CustomText(
-                        text: "See all",
-                        style: TextStyle(
-                            color: Color(0xff5C58FF),
-                            fontSize: 13,
-                            fontWeight: FontWeight.w600),
-                        align: TextAlign.end),
+                    GestureDetector(
+                      onTap: () {
+                        goTo(context, const GuideScreen());
+                      },
+                      child: const CustomText(
+                          text: "See all",
+                          style: TextStyle(
+                              color: Color(0xff5C58FF),
+                              fontSize: 13,
+                              fontWeight: FontWeight.w600),
+                          align: TextAlign.end),
+                    ),
                   ],
                 ),
               ),
               GestureDetector(
                 onTap: () {
-                  goTo(context, const GuideScreen());
+                  goTo(context, const Quiz_Instruction());
                 },
                 child: SingleChildScrollView(
                   scrollDirection: Axis.horizontal,

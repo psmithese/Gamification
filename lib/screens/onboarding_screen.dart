@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:gamification/helper/nav_function.dart';
-import 'package:gamification/main.dart';
 import 'package:gamification/screens/home_screen.dart';
 import 'package:gamification/screens/signin_screen.dart';
 import 'package:introduction_slider/source/source.dart';
@@ -18,6 +17,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
     return Scaffold(
       // backgroundColor: Colors.black,
       body: SafeArea(
+        minimum: const EdgeInsets.only(top: 76),
         child: Column(
           children: [
             GestureDetector(
@@ -27,35 +27,37 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                     MaterialPageRoute(
                         builder: (context) => const SignInScreen()));
               },
-              child: Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    IconButton(
-                        icon: const Icon(Icons.nightlight_round),
-                        onPressed: () {
-                          themeMode.value = themeMode.value == 1 ? 2 : 1;
-                        }),
-                    const Text(
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: const [
+                  //IconButton(
+                  // icon: const Icon(Icons.nightlight_round),
+                  //onPressed: () {
+                  //themeMode.value = themeMode.value == 1 ? 2 : 1;
+                  // }),
+                  Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 17),
+                    child: Text(
                       'Skip',
                       style: TextStyle(
                           color: Color(0xff8482FF),
                           fontSize: 18.0,
                           fontWeight: FontWeight.w600),
                     ),
-                  ],
-                ),
+                  ),
+                ],
               ),
             ),
             Expanded(
               child: IntroductionSlider(
                 items: [
                   IntroductionSliderItem(
+                    
                     logo: Image.asset(
                       "assets/images/Game1.png",
                       scale: 1.5,
                     ),
+                    
                     title: const Text(
                       "Get access to a strategically \nstructured tutorial and materials in a \nGAMIFIED environment to help groom \nyou into professionals in the tech space.",
                       textAlign: TextAlign.center,

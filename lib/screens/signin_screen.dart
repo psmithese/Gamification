@@ -34,7 +34,7 @@ class _SignInScreenState extends State<SignInScreen> {
                         fontSize: 18,
                         fontWeight: FontWeight.w600,
                         height: 1.2125,
-                        color: Color(0xffffffff),
+                        color: Colors.black,
                       )),
                 ),
                 Container(
