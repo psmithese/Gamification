@@ -7,7 +7,6 @@ import 'package:gamification/helper/nav_function.dart';
 import 'package:gamification/screens/beginner_screen.dart';
 import 'package:gamification/screens/dashboard.dart';
 import 'package:gamification/screens/feedback.dart';
-import 'package:gamification/screens/guide_screen.dart';
 import 'package:gamification/screens/leaderboard.dart';
 import 'package:gamification/screens/quiz_instructions.dart';
 import 'package:gamification/screens/settings.dart';
@@ -36,6 +35,7 @@ class _HomePageState extends State<HomePage> {
           backgroundColor: Colors.transparent,
           elevation: 0,
           actions: [
+            Image.asset('assets/images/xoviya.png'),
             Padding(
               padding: const EdgeInsets.only(left: 30.0),
               child: Image.asset('assets/images/Bell.png'),
@@ -212,8 +212,7 @@ class _HomePageState extends State<HomePage> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       GestureDetector(
-                        onTap: (() =>
-                            goTo(context, const BeginnerQuizScreen())),
+                        onTap: (() => goTo(context, const Quiz_Instruction())),
                         child: Image.asset("assets/images/begin.png"),
                       ),
                       const SizedBox(
@@ -242,7 +241,7 @@ class _HomePageState extends State<HomePage> {
                         align: TextAlign.end),
                     GestureDetector(
                       onTap: () {
-                        goTo(context, const GuideScreen());
+                        goTo(context, const BeginnerQuizScreen());
                       },
                       child: const CustomText(
                           text: "See all",
