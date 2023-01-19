@@ -50,7 +50,7 @@ class IntermediateScreen extends StatelessWidget {
                   const Gap(50),
                   QuizWidget(
                     color: const Color(0xffA714ED),
-                    image: Image.asset("assets/images/Emojii.png"),
+                    image: Image.asset("assets/images/Emoji11.png"),
                     text: "WEEK",
                     text2: "5",
                     text3: "Introduction to \nUI Design (1)",
@@ -58,7 +58,7 @@ class IntermediateScreen extends StatelessWidget {
                   QuizWidget(
                       color: const Color(0xff025ECA),
                       text: "WEEK",
-                      image: Image.asset("assets/images/Emoji3.png"),
+                      image: Image.asset("assets/images/Emoji13.png"),
                       text2: "6",
                       text3: "Introduction to \nUI Design (2)")
                 ],
@@ -70,13 +70,13 @@ class IntermediateScreen extends StatelessWidget {
                   QuizWidget(
                       color: const Color(0xffDA046A),
                       text: "WEEK",
-                      image: Image.asset("assets/images/Emoji4.png"),
+                      image: Image.asset("assets/images/Emoji14.png"),
                       text2: "7",
                       text3: "Information\nArchitecture"),
                   QuizWidget(
                       color: const Color(0xffD15700),
                       text: "WEEK",
-                      image: Image.asset("assets/images/Emoji5.png"),
+                      image: Image.asset("assets/images/Emoji15.png"),
                       text2: "8",
                       text3: "User Testing \nand heuristics \nevaluation")
                 ],

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:gamification/screens/signup_screen.dart';
+import 'package:gamification/screens/signupp_screen.dart';
 import 'package:gamification/widget/text_widget.dart';
 
 class Sign extends StatelessWidget {

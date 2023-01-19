@@ -34,7 +34,7 @@ class AdvancedScreen extends StatelessWidget {
                 height: 45,
               ),
               const CustomText(
-                  text: "Beginner UI/UX Course \nCurriculum",
+                  text: "Advance UI/UX Course \nCurriculum",
                   style: TextStyle(
                       fontSize: 18,
                       fontWeight: FontWeight.w600,
@@ -49,18 +49,18 @@ class AdvancedScreen extends StatelessWidget {
                 children: [
                   const Gap(50),
                   QuizWidget(
-                    color: const Color(0xff50A2EE),
-                    image: Image.asset("assets/images/Emoji11.png"),
                     text: "WEEK",
                     text2: "9",
-                    text3: "Fundamentals \nof UI/UX",
+                    color: const Color(0xff50A2EE),
+                    image: Image.asset("assets/images/Emoji16.png"),
+                    text3: "  Case study",
                   ),
                   QuizWidget(
                       color: const Color(0xff8482FF),
                       text: "WEEK",
-                      image: Image.asset("assets/images/Emoji3.png"),
+                      image: Image.asset("assets/images/Emoji17.png"),
                       text2: "10",
-                      text3: "Design Thinking")
+                      text3: " Project \n( UX PHASE )")
                 ],
               ),
               const Gap(5),
@@ -70,15 +70,15 @@ class AdvancedScreen extends StatelessWidget {
                   QuizWidget(
                       color: const Color(0xff01D4A1),
                       text: "WEEK",
-                      image: Image.asset("assets/images/Emoji4.png"),
+                      image: Image.asset("assets/images/Emoji18.png"),
                       text2: "11",
-                      text3: "Information\nArchitecture"),
+                      text3: "    Project \n   ( UI PHASE )"),
                   QuizWidget(
                       color: const Color(0xffF58824),
+                      image: Image.asset("assets/images/Emoji4.png"),
                       text: "WEEK",
-                      image: Image.asset("assets/images/Emoji5.png"),
                       text2: "12",
-                      text3: "User Testing \nand heuristics \nevaluation")
+                      text3: "Project \n( Testing and \nsubmission)")
                 ],
               )
             ],

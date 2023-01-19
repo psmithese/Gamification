@@ -29,7 +29,7 @@ class QuizWidget extends StatelessWidget {
                 color: color, borderRadius: BorderRadius.circular(13.87)),
             child: Column(
               children: [
-                const Gap(20),
+                const Gap(10),
                 Text(
                   text,
                   style: const TextStyle(
@@ -45,7 +45,7 @@ class QuizWidget extends StatelessWidget {
                       fontWeight: FontWeight.w700,
                       fontSize: 20),
                 ),
-                const Gap(15),
+                const Gap(10),
                 Padding(
                   padding: const EdgeInsets.only(left: 15),
                   child: Row(

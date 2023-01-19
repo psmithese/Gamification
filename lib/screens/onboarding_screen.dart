@@ -3,6 +3,7 @@ import 'package:gamification/helper/nav_function.dart';
 import 'package:gamification/main.dart';
 import 'package:gamification/screens/home_screen.dart';
 import 'package:gamification/screens/signin_screen.dart';
+import 'package:gamification/screens/signini_screen.dart';
 import 'package:introduction_slider/source/source.dart';
 
 class OnboardingScreen extends StatefulWidget {

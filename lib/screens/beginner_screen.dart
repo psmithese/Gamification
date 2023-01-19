@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:gamification/helper/nav_function.dart';
+import 'package:gamification/screens/week1_screen.dart';
+import 'package:gamification/screens/week2_screen.dart';
 import 'package:gamification/widget/quiz_widget.dart';
 import 'package:gamification/widget/text_widget.dart';
 import 'package:gap/gap.dart';
@@ -48,19 +51,25 @@ class BeginnerQuizScreen extends StatelessWidget {
               Row(
                 children: [
                   const Gap(50),
-                  QuizWidget(
-                    color: const Color(0xff50A2EE),
-                    image: Image.asset("assets/images/Emojii.png"),
-                    text: "WEEK",
-                    text2: "1",
-                    text3: "Fundamentals \nof UI/UX",
-                  ),
-                  QuizWidget(
-                      color: const Color(0xff8482FF),
+                  GestureDetector(
+                    onTap: () => goTo(context, const WeekOneScreen()),
+                    child: QuizWidget(
+                      color: const Color(0xff50A2EE),
+                      image: Image.asset("assets/images/Emojii.png"),
                       text: "WEEK",
-                      image: Image.asset("assets/images/Emoji3.png"),
-                      text2: "2",
-                      text3: "Design Thinking")
+                      text2: "1",
+                      text3: "Fundamentals \nof UI/UX",
+                    ),
+                  ),
+                  InkWell(
+                    onTap: () => goTo(context, const WeekTwoScreen()),
+                    child: QuizWidget(
+                        color: const Color(0xff8482FF),
+                        text: "WEEK",
+                        image: Image.asset("assets/images/Emoji3.png"),
+                        text2: "2",
+                        text3: "Design Thinking"),
+                  )
                 ],
               ),
               const Gap(5),
